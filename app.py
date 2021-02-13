@@ -60,8 +60,7 @@ def stats(start=None, end=None):
 
     if not end:
         results = session.query(*sel).\
-            filter(Measurement.date >= start).\
-            filter(Measurement.date <= end).all()
+            filter(Measurement.date >= start)
         temps = list(np.ravel(results))
         return jsonify(temps=temps)
 
